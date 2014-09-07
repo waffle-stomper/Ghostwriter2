@@ -231,7 +231,7 @@ public class GuiGhostBook extends GuiScreen{
         int buttonWidth = 120;
         int buttonHeight = 20;
         int buttonSideOffset = 5;
-        ScaledResolution scaledResolution = new ScaledResolution(this.mc.gameSettings, this.mc.displayWidth, this.mc.displayHeight);
+        ScaledResolution scaledResolution = new ScaledResolution(this.mc, this.mc.displayWidth, this.mc.displayHeight);
   		int rightXPos = scaledResolution.getScaledWidth() - (buttonWidth + buttonSideOffset);
 
   		if (this.heldBookIsWritable){
