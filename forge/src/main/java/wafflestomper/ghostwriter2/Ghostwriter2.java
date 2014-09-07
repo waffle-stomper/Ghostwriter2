@@ -24,7 +24,7 @@ import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
 public class Ghostwriter2{
 	
     public static final String MODID = "Ghostwriter2";
-    public static final String VERSION = "1.7.2-0.8.6";
+    public static final String VERSION = "1.7.10-0.8.6";
     public static final String NAME = "Ghostwriter2";
     
     private Minecraft mc = Minecraft.getMinecraft();
