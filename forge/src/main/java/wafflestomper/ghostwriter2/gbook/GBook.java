@@ -236,7 +236,7 @@ public class GBook {
 			else if (this.cursorPage > 0){
 				//There's at least one page before this one. Remove the last character on it.
 				GPage currPage = this.pages.get(this.cursorPage-1);
-				int lineNum = currPage.lines.size();
+				int lineNum = currPage.lines.size()-1;
 				currLine = currPage.lines.get(lineNum);
 				removeText(this.cursorPage-1, lineNum, currLine.text.length()-1, 
 						   this.cursorPage, this.cursorLine, this.cursorPosChars);
@@ -663,8 +663,8 @@ public class GBook {
 	            if (signIt)
 	            {
 	            	sendMode = "MC|BSign";
-	                bookObj.setTagInfo("author", new NBTTagString(this.title));
-	                bookObj.setTagInfo("title", new NBTTagString(this.author));
+	                bookObj.setTagInfo("author", new NBTTagString(this.author));
+	                bookObj.setTagInfo("title", new NBTTagString(this.title));
 	                bookObj.func_150996_a(Items.written_book);
 	            }
 	

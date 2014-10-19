@@ -58,6 +58,7 @@ public class GuiGhostBook extends GuiScreen{
 	private static final int BTN_SELECT_PAGE_B = 16;
 	private static final int BTN_COPY_SELECTED_PAGES = 17;
 	private static final int BTN_PASTE_MULTIPLE_PAGES = 18;
+	private static final int BTN_INSERT_PAGE = 19;
 	private static final int BTN_ADD_SIGNATURE_PAGES = 21;
 	private static final int BTN_BLACK = 50;
 	private static final int BTN_DARK_BLUE = 51;
@@ -97,6 +98,7 @@ public class GuiGhostBook extends GuiScreen{
 	private GuiButton btnSelectPageB;
 	private GuiButton btnCopySelectedPages;
 	private GuiButton btnPasteMultiplePages;
+	private GuiButton btnInsertPage;
 	private GuiButton btnBlack;
 	private GuiButton btnDarkBlue;
 	private GuiButton btnDarkGreen;
@@ -241,6 +243,8 @@ public class GuiGhostBook extends GuiScreen{
             this.buttonList.add(this.btnCutMultiplePages = new GuiButton(BTN_CUT_MULTIPLE_PAGES, rightXPos, 90, buttonWidth, buttonHeight, "Cut This Page"));
             this.buttonList.add(this.btnPasteBook = new GuiButton(BTN_PASTE_BOOK, rightXPos, 25, buttonWidth, buttonHeight, "Paste Book"));
       		this.buttonList.add(this.btnPasteMultiplePages = new GuiButton(BTN_PASTE_MULTIPLE_PAGES, rightXPos, 110, buttonWidth, buttonHeight, "Paste Page"));
+      		this.buttonList.add(this.btnInsertPage = new GuiButton(BTN_INSERT_PAGE, rightXPos, 135, buttonWidth, buttonHeight, "Insert Page"));
+      		
       		this.buttonList.add(new GuiButton(BTN_LOAD_BOOK, 5, 25, buttonWidth, buttonHeight, "Load Book"));
       		this.buttonList.add(new GuiButton(BTN_ADD_SIGNATURE_PAGES, 5, 60, buttonWidth, buttonHeight, "Add Signature Pages"));
       		
@@ -366,6 +370,12 @@ public class GuiGhostBook extends GuiScreen{
     			
     		case BTN_PASTE_MULTIPLE_PAGES:
     			this.book.insertPages(this.book.cursorPage, this.pageClipboard);
+    			break;
+    			
+    		case BTN_INSERT_PAGE:
+    			List<String> blankPage = new ArrayList();
+    			blankPage.add("");
+    			this.book.insertPages(this.book.cursorPage, blankPage);
     			break;
     		
     		case BTN_CUT_MULTIPLE_PAGES:
